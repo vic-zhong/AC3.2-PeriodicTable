@@ -10,9 +10,9 @@ import UIKit
 
 class ElementView: UIView {
 
-    
     @IBOutlet weak var symbolLabel: UILabel!
     @IBOutlet weak var numLabel: UILabel!
+    @IBOutlet weak var bgColor: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
