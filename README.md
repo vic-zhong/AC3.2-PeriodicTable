@@ -6,27 +6,56 @@ To build the classic graphical representation of the Periodic Table of the Eleme
 using a Collection View. The data will come from our familiar elements endpoint and
 it will be stored in Core Data. We'll build the cell in a separate nib file.
 
+## Mockup
+
+![PToE](http://www.visionlearning.com/images/figure-images/52-a.jpg)
+
+We'll probably only get as far as doing it in black and white and placing elements 57 and 89
+within the main table and ignoring the rest of the Lanthanides and Actinides depicted in the broken 
+out rows at bottom. The data model makes this
+relatively easy. 
+
 ## Theme Song
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zGM-wSKFBpo" frameborder="0" allowfullscreen></iframe>
 [Tom Lehrer's Elements](https://www.youtube.com/watch?v=zGM-wSKFBpo)
 
 [Also cute](https://www.youtube.com/watch?v=v1TfPDlA1xE), discovered in the related videos. 
 
+## A note about cannibalization
+
+![HtC](http://media.winnipegfreepress.com/images/4592857.jpg)
+
+We will be grabbing code from (a.k.a. cannibalizing) the CoreArticles and MidtermElements
+projects to build this one. There's a balance between blindly cutting and pasting and 
+blindly retyping the same code. I think it's fair to say most developers have a sort of
+database in their mind of projects they've worked on and the patterns that may be reusable
+from them, but still not worth putting in a common location.
+
+## Steps
+
 1. Fork and clone.
 1. Create a project named PeriodicTable inside.
 1. Alter the storyboard to be a Collection View embeded in a Navigation Controller.
-1. Create a UICollectionViewCell subclass with associated XIB file.
+1. Create a UICollectionViewCell subclass with associated XIB file. Leave it empty for now.
+1. Register the class in your collection view.
+    ```swift
+    // Register cell classes
+    self.collectionView!.register(UINib(nibName:"ElementCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+    ```
+1. Create a custom view named ElementView.swift. 
+1. Create a nib file named ElementView.xib.
+1. Add your custom view to your collection view cell. Yes, this is a nib backed view referencing another
+    nib backed view.
+1. Add a label for the element's symbol and a label for the element's number to the view and hook it up.
+1. Test your collection view with some bogus data before moving on.
 
-        // Register cell classes
-        self.collectionView!.register(UINib(nibName:"ElementCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
-
-4. bogus data to test collectionview
+```swift
     let data = [("H", 1), ("He", 2), ("Li", 3)]
+```
 
-5. New data model
+1. New File > Data Model. Accept the default name.
 
-symbol, name, number, group, weight
+1. symbol, name, number, group, weight
 not optional
 index number and constrain on it. (index!)
 
