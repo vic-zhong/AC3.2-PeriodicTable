@@ -8,10 +8,12 @@
 
 import UIKit
 
-private let reuseIdentifier = "elementCell"
 
 class PeriodicTableCollectionViewController: UICollectionViewController {
 
+    private let reuseIdentifier = "elementCell"
+    let data = [("H", 1), ("He", 2), ("Li", 3)]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,13 +34,17 @@ class PeriodicTableCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 3
+        return data.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ElementCollectionViewCell
     
-        cell.backgroundColor = .red
+        let element = data[indexPath.row]
+        
+        
+        cell.elementView.symbolLabel.text = element.0
+        cell.elementView.numLabel.text = "\(element.1)"
     
         return cell
     }

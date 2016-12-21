@@ -16,6 +16,7 @@
 		9E44348E1E0AF625003E0177 /* ElementCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E44348C1E0AF625003E0177 /* ElementCollectionViewCell.xib */; };
 		9E4434901E0AF640003E0177 /* ElementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E44348F1E0AF640003E0177 /* ElementView.xib */; };
 		9E4434921E0AF67C003E0177 /* ElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4434911E0AF67C003E0177 /* ElementView.swift */; };
+		9E4434981E0AFB8B003E0177 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9E4434961E0AFB8B003E0177 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9E44348C1E0AF625003E0177 /* ElementCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ElementCollectionViewCell.xib; sourceTree = "<group>"; };
 		9E44348F1E0AF640003E0177 /* ElementView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ElementView.xib; sourceTree = "<group>"; };
 		9E4434911E0AF67C003E0177 /* ElementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementView.swift; sourceTree = "<group>"; };
+		9E4434971E0AFB8B003E0177 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				9E4434831E0AF53B003E0177 /* View Controllers */,
 				9E4434821E0AF509003E0177 /* Supporting Files */,
+				9E4434961E0AFB8B003E0177 /* Model.xcdatamodeld */,
 			);
 			path = PeriodicTable;
 			sourceTree = "<group>";
@@ -72,10 +75,10 @@
 			isa = PBXGroup;
 			children = (
 				9E44346F1E0AF4EF003E0177 /* AppDelegate.swift */,
-				9E4434731E0AF4EF003E0177 /* Main.storyboard */,
 				9E4434761E0AF4EF003E0177 /* Assets.xcassets */,
-				9E4434781E0AF4EF003E0177 /* LaunchScreen.storyboard */,
 				9E44347B1E0AF4EF003E0177 /* Info.plist */,
+				9E4434781E0AF4EF003E0177 /* LaunchScreen.storyboard */,
+				9E4434731E0AF4EF003E0177 /* Main.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -83,12 +86,10 @@
 		9E4434831E0AF53B003E0177 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9E4434841E0AF55C003E0177 /* PeriodicTableCollectionViewController.swift */,
 				9E44348B1E0AF625003E0177 /* ElementCollectionViewCell.swift */,
 				9E4434911E0AF67C003E0177 /* ElementView.swift */,
+				9E4434841E0AF55C003E0177 /* PeriodicTableCollectionViewController.swift */,
 				9E44348A1E0AF5E3003E0177 /* Views */,
-				9E44348C1E0AF625003E0177 /* ElementCollectionViewCell.xib */,
-				9E44348F1E0AF640003E0177 /* ElementView.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -96,6 +97,8 @@
 		9E44348A1E0AF5E3003E0177 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9E44348C1E0AF625003E0177 /* ElementCollectionViewCell.xib */,
+				9E44348F1E0AF640003E0177 /* ElementView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			files = (
 				9E4434851E0AF55C003E0177 /* PeriodicTableCollectionViewController.swift in Sources */,
 				9E4434921E0AF67C003E0177 /* ElementView.swift in Sources */,
+				9E4434981E0AFB8B003E0177 /* Model.xcdatamodeld in Sources */,
 				9E44348D1E0AF625003E0177 /* ElementCollectionViewCell.swift in Sources */,
 				9E4434701E0AF4EF003E0177 /* AppDelegate.swift in Sources */,
 			);
@@ -341,6 +345,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9E4434961E0AFB8B003E0177 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9E4434971E0AFB8B003E0177 /* Model.xcdatamodel */,
+			);
+			currentVersion = 9E4434971E0AFB8B003E0177 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9E4434641E0AF4EE003E0177 /* Project object */;
 }
