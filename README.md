@@ -66,11 +66,11 @@ from them, but still not worth putting in a common location.
 
 1. Make a Element+JSON.swift. [Naming convention justification](http://stackoverflow.com/questions/26319660/whats-the-best-practice-for-naming-swift-files-that-add-extensions-to-existing) that I've mentioned before. 
 
-1. Steal getData from  MidtermElements' main view controller.
+1. Steal getData from  MidtermElements' main view controller. Use this API endpoint https://api.fieldbook.com/v1/5859ad86d53164030048bae2/elements.
 
 1. Add data controller to AppDelegate (pilfer code from CoreArticles).
 
-1. Initialize fetched results controller (poach method from CoreArticles' table view controller)
+1. Initialize fetched results controller (poach method from CoreArticles' table view controller).
 
 1. First try all the data in one section.
 
