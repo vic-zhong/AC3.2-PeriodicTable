@@ -38,10 +38,12 @@ from them, but still not worth putting in a common location.
 1. Alter the storyboard to be a Collection View embeded in a Navigation Controller.
 1. Create a UICollectionViewCell subclass with associated XIB file. Leave it empty for now.
 1. Register the class in your collection view.
+
     ```swift
     // Register cell classes
     self.collectionView!.register(UINib(nibName:"ElementCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
     ```
+    
 1. Create a custom view named ElementView.swift. 
 1. Create a nib file named ElementView.xib.
 1. Add your custom view to your collection view cell. Yes, this is a nib backed view referencing another
@@ -49,41 +51,30 @@ from them, but still not worth putting in a common location.
 1. Add a label for the element's symbol and a label for the element's number to the view and hook it up.
 1. Test your collection view with some bogus data before moving on.
 
-```swift
-    let data = [("H", 1), ("He", 2), ("Li", 3)]
-```
+    ```swift
+        let data = [("H", 1), ("He", 2), ("Li", 3)]
+    ```
 
 1. New File > Data Model. Accept the default name.
 
-1. symbol, name, number, group, weight
-not optional
-index number and constrain on it. (index!)
+1. Make an entity named Element and give it these attributes: symbol, name, number, group, and weight.
+    1. Make number not optional and indexed
+1. Add a constraint on number to make it unique the object so that multiple attemts to insert the
+    same entity will fail.
+    
+1. Grab ```Data Controller.swift``` from the CoreArticles project.
 
-6. Data Controller.swift
+1. Make a Element+JSON.swift. [Naming convention justification](http://stackoverflow.com/questions/26319660/whats-the-best-practice-for-naming-swift-files-that-add-extensions-to-existing) that I've mentioned before. 
 
-7. Element+JSON.swift
-http://stackoverflow.com/questions/26319660/whats-the-best-practice-for-naming-swift-files-that-add-extensions-to-existing
+1. Steal getData from  MidtermElements' main view controller.
 
-8. Steal getData from Elements
+1. Add data controller to AppDelegate (pilfer code from CoreArticles).
 
-9. Add data controller to AppDelegate (CoreArticles)
+1. Initialize fetched results controller (poach method from CoreArticles' table view controller)
 
-10. Initialize fetched results controller (cannibalize CoreArticles)
+1. First try all the data in one section.
 
-11. First try one section.
+1. Then section by group and sort by group and number.
 
-12. Then group and number sort.
+1. Hmm, how are we going to balance this table?
 
-13. Hmm, how are we going to balance this table?
-
-
-http://stackoverflow.com/questions/22688851/make-font-grow-together-with-uilabel-resized-by-auto-layout-how-to-do-it-in
-
-
-adjustsFontSizeToFitWidth property of UILabel will not grow up the font size, it is only for reducing according to the documentation: Normally, the label text is drawn with the font you specify in the font property. If this property is set to YES, however, and the text in the text property exceeds the label’s bounding rectangle, the receiver starts reducing the font size until the string fits or the minimum font size is reached.
-
-But if you set font size big enough (say 200) and set adjustsFontSizeToFitWidth to YES, i think you would get interestingly valuable results.
-
-**Important** And do not forget to set ```Baseline``` as ```Align Centers```, otherwise your text may not be seen properly.
-
-Please inform us about your results.
